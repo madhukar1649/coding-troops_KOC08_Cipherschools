@@ -1,0 +1,31 @@
+#PROJECT-22,PYTHON 1NT-108
+#NAME OF STUDENTS WITH MAXIMUM MARKS AFTER UPTATION
+#JUMP IN STUDENT'S RANK
+def nameRank(names, marks, updates, a):
+    # Array of students
+    x = [[0 for j in range(3)] for i in range(a)]
+    for i in range(a):
+        # Store the name of the student
+        x[i][0] = names[i]
+        # Update the marks of the student
+        x[i][1] = marks[i] + updates[i]
+        # Store the current rank of the student
+        x[i][2] = i + 1
+    highest = x[0]
+    for j in range(1, a):
+        if (x[j][1] >= highest[1]):
+            highest = x[j]
+    # Print the name and jump in rank
+    print("Name: ", highest[0], ", Rank Jump: ",
+          abs(highest[2] - 1), sep="")
+# Driver code
+# Names of the students in class
+names = ["aniket", "jaswanth", "madhukar"]
+# Marks of the students
+marks = [79, 78, 75]
+# Updates of done to student marks
+updates = [5, 7, -7]
+# Number of students
+a = len(marks)
+nameRank(names, marks, updates, a)
+#This code is contributed by N V K JASWANTH SRIGHAKOLLAPU (12215170)
